@@ -47,4 +47,15 @@ class PostController extends Controller
 
     }
 
+    public function destroy(Topic $topic, Post $post){
+        $this->authorize('destroy',$post);
+
+        $post->delete();
+
+        return response(null, 204);
+
+    }
+
+
+
 }
