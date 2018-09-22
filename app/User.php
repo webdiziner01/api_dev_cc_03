@@ -44,5 +44,8 @@ class User extends Authenticatable
 
     }
 
+    public function ownsTopic(Topic $topic){
+        return $this->id == $topic->user->id; // $topic->user_id
+    }
 
 }
